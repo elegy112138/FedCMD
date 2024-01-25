@@ -1,9 +1,7 @@
 # Towards Optimal Customized Architecture for Heterogeneous Federated Learning with Contrastive Cloud-Edge Model Decoupling
 
 ## 1. Abstract
-Federated learning, as a promising distributed learning paradigm, enables collaborative training of a global model across multiple network edge clients without the need for central data collecting. However, the heterogeneity of edge data distribution will draft the model towards the local minima, which can
-be distant from the global optimum. This phenomenon called “client-draft” often leads to slow convergence and substantial communication overhead. To tackle these issues, we propose a novel federated learning framework called FedCMD with a contrastive Cloud-edge model decoupling to separate deep neural networks into a body for capturing shared representations in the Cloud and a personalized head for migrating data heterogeneity in the edges. Departing from the traditional approach of rigidly assigning the last layer as the personalized head and pre-output layers as the body, we explore the performance gains of selecting different neural network layers as the personalized head and find that utilizing the last layer is not always optimal. This observation inspired us to investigate a representation method to capture the heterogeneity of data distributions of each client and leverage the knowledgeization toward optimal personalized layer selection. Therefore, we utilize the low-dimensional representation of each layer to contrast feature distribution transfer and
-introduce a Wasserstein-based layer selection method, aimed at identifying the best-match layer for personalization. Additionally, a weighted global aggregation algorithm is proposed based on the selected personalized layer for the practical application of <strong>FedCMD</strong>. Extensive experiments on ten benchmarks demonstrate the efficiency and superior performance of our solution compared with nine state-of-the-art solution.
+Federated learning, as a promising distributed learning paradigm, enables collaborative training of a global model across multiple network edge clients without the need for central data collecting. However, the heterogeneity of edge data distribution will draft the model towards the local minima, which can be distant from the global optimum. This phenomenon called “client-draft” often leads to slow convergence and substantial communication overhead. To tackle these issues, we propose a novel federated learning framework called <strong>FedCMD</strong> with a contrastive Cloud-edge model decoupling to separate deep neural networks into a body for capturing shared representations in the Cloud and a personalized head for migrating data heterogeneity in the edges. Departing from the traditional approach of rigidly assigning the last layer as the personalized head and pre-output layers as the body, we explore the performance gains of selecting different neural network layers as the personalized head and find that utilizing the last layer is not always optimal. This observation inspired us to investigate a representation method to capture the heterogeneity of data distributions of each client and leverage the knowledgeization toward optimal personalized layer selection. Therefore, we utilize the low-dimensional representation of each layer to contrast feature distribution transfer and introduce a Wasserstein-based layer selection method, aimed at identifying the best-match layer for personalization. Additionally, a weighted global aggregation algorithm is proposed based on the selected personalized layer for the practical application of <strong>FedCMD</strong>. Extensive experiments on ten benchmarks demonstrate the efficiency and superior performance of our solution compared with nine state-of-the-art solution.
 
 ## 2. Framework
 
@@ -75,7 +73,7 @@ docker build \
 
 ### Easy Run 🏃‍♂️
 
-FedCMD and other baseline methods are inherited from `FedAvgServer` and `FedAvgClient`. If you wanna figure out the entire workflow and detail of variable settings, go check [`./src/server/fedavg.py`]() and [`./src/client/fedavg.py`]().
+FedCMD and other baseline methods are inherited from `FedAvgServer` and `FedAvgClient`. If you wanna figure out the entire workflow and detail of variable settings, go check [`./src/server/fedavg.py`](https://github.com/elegy112138/FedCMD/blob/main/src/server/fedavg.py) and [`./src/client/fedavg.py`](https://github.com/elegy112138/FedCMD/blob/main/src/client/fedavg.py).
 
 
 ```shell
@@ -89,16 +87,16 @@ cd src/server
 python fedavg.py -d cifar10
 ```
 
-About methods of generating federated dastaset, go check [`data/README.md`]() for full details.
+About methods of generating federated dastaset, go check [`data/README.md`](https://github.com/elegy112138/FedCMD/blob/main/data/README.md) for full details.
 
 
 #### Monitor 📈 (recommended 👍)
 1. Run `python -m visdom.server` on terminal.
-2. Run `src/server/fedcmd.py --visible 1`
+2. Run `src/server/${algo}.py --visible 1`
 3. Go check `localhost:8097` on your browser.
 ### Generic Arguments 🔧
 
-📢 All generic arguments have their default value. Go check `get_fedavg_argparser()` in [`FedCMD/src/server/fedavg.py`]() for full details of generic arguments.
+📢 All generic arguments have their default value. Go check `get_fedavg_argparser()` in [`FedCMD/src/server/fedavg.py`](https://github.com/elegy112138/FedCMD/blob/main/src/server/fedavg.py) for full details of generic arguments.
 
 About the default values and hyperparameters of advanced FL methods, go check corresponding `FedCMD/src/server/${algo}.py` for full details.
 | Argument                       | Description                                                                                                                                                                                                                                                                                                                               |
@@ -159,7 +157,7 @@ Regular Image Datasets
 - [*CINIC-10*](https://datashare.ed.ac.uk/handle/10283/3192) (3 x 32 x 32, 10 classes)
 
 - [*DomainNet*](http://ai.bu.edu/DomainNet/) (3 x ? x ?, 345 classes)
-  - Go check [`data/README.md`]() for the full process guideline 🧾.
+  - Go check [`data/README.md`](https://github.com/elegy112138/FedCMD/blob/main/data/README.md) for the full process guideline 🧾.
 
 Medical Image Datasets
 
