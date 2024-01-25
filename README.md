@@ -8,9 +8,7 @@ introduce a Wasserstein-based layer selection method, aimed at identifying the b
 ## 2. Framework
 
   <p align="center">
-    <a href="https://github.com/KarhouTam/FL-bench/blob/master/LICENSE">
-      <img alt="GitHub License" src="https://img.shields.io/github/license/KarhouTam/FL-bench?style=for-the-badge&logo=github&color=8386e0"/>
-    </a>
+      <img alt="FrameWork" src="https://img.shields.io/github/license/KarhouTam/FL-bench?style=for-the-badge&logo=github&color=8386e0"/>
   </p>
   
 The above figure presents the diagram of FedCMD. We consider the Cloud-edge cooperation system, in which two types of nodes are involved, including one Cloud server, and multiple edge clients. FedCMD contains two major phases including <strong>the personalized layer selection phase</strong> and the heterogeneous federated learning phase with the Cloud-edge model decoupling. In personalized layer selection phase, the Cloud-edge system employs the standard federated learning such as FedAvg and utilizes the contrastive layer selection mechanism to collaboratively elect the personalized layer. Thus, the selection proceeds as follows:
@@ -36,7 +34,7 @@ Once this personalized layer is determined, it remains fixed throughout <strong>
 ### Environment Preparation 🚀
 
 #### PyPI 🐍
-📢 Note that FL-bench needs `3.10 <= python < 3.12`. I suggest you to checkout your python version before installing packages by pip.
+📢 Note that FedCMD needs `3.10 <= python < 3.12`. I suggest you to checkout your python version before installing packages by pip.
 ```
 pip install -r requirements.txt
 ```
@@ -62,23 +60,22 @@ sed -i "26,30d" pyproject.toml && poetry lock --no-update && poetry install
 
 **At China mainland**
 ```
-docker build -t fl-bench .
+docker build -t FedCMD .
 ```
 
 **Not at China mainland**
 ```
 docker build \
--t fl-bench \
+-t FedCMD \
 --build-arg IMAGE_SOURCE=karhou/ubuntu:basic \
 --build-arg CHINA_MAINLAND=false \
 .
 ```
 
 
-
 ### Easy Run 🏃‍♂️
 
-ALL classes of methods are inherited from `FedAvgServer` and `FedAvgClient`. If you wanna figure out the entire workflow and detail of variable settings, go check [`./src/server/fedavg.py`](https://github.com/KarhouTam/FL-bench/blob/master/src/server/fedavg.py) and [`./src/client/fedavg.py`](https://github.com/KarhouTam/FL-bench/blob/master/src/client/fedavg.py).
+FedCMD and other baseline methods are inherited from `FedAvgServer` and `FedAvgClient`. If you wanna figure out the entire workflow and detail of variable settings, go check [`./src/server/fedavg.py`]() and [`./src/client/fedavg.py`]().
 
 
 ```shell
@@ -92,18 +89,18 @@ cd src/server
 python fedavg.py -d cifar10
 ```
 
-About methods of generating federated dastaset, go check [`data/README.md`](https://github.com/KarhouTam/FL-bench/tree/master/data/#readme) for full details.
+About methods of generating federated dastaset, go check [`data/README.md`]() for full details.
 
 
 #### Monitor 📈 (recommended 👍)
 1. Run `python -m visdom.server` on terminal.
-2. Run `src/server/${algo}.py --visible 1`
+2. Run `src/server/fedcmd.py --visible 1`
 3. Go check `localhost:8097` on your browser.
 ### Generic Arguments 🔧
 
-📢 All generic arguments have their default value. Go check `get_fedavg_argparser()` in [`FL-bench/src/server/fedavg.py`](https://github.com/KarhouTam/FL-bench/tree/master/src/server/fedavg.py) for full details of generic arguments.
+📢 All generic arguments have their default value. Go check `get_fedavg_argparser()` in [`FedCMD/src/server/fedavg.py`]() for full details of generic arguments.
 
-About the default values and hyperparameters of advanced FL methods, go check corresponding `FL-bench/src/server/${algo}.py` for full details.
+About the default values and hyperparameters of advanced FL methods, go check corresponding `FedCMD/src/server/${algo}.py` for full details.
 | Argument                       | Description                                                                                                                                                                                                                                                                                                                               |
 | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `--dataset`                    | The name of dataset that experiment run on.                                                                                                                                                                                                                                                                                               |
@@ -124,13 +121,13 @@ About the default values and hyperparameters of advanced FL methods, go check co
 | `--use_cuda`                   | Non-zero value indicates that tensors are in gpu.                                                                                                                                                                                                                                                                                         |
 | `--visible`                    | Non-zero value for using Visdom to monitor algorithm performance on `localhost:8097`.                                                                                                                                                                                                                                                     |
 | `--global_testset`             | Non-zero value for evaluating client models over the global testset before and after local training, instead of evaluating over clients own testset. The global testset is the union set of all client's testset. *NOTE: Activating this setting will considerably slow down the entire training process, especially the dataset is big.* |
-| `--save_log`                   | Non-zero value for saving algorithm running log in `FL-bench/out/${algo}`.                                                                                                                                                                                                                                                                |
+| `--save_log`                   | Non-zero value for saving algorithm running log in `FedCMD/out/${algo}`.                                                                                                                                                                                                                                                                |
 | `--straggler_ratio`            | The ratio of stragglers (set in `[0, 1]`). Stragglers would not perform full-epoch local training as normal clients. Their local epoch would be randomly selected from range `[--straggler_min_local_epoch, --local_epoch)`.                                                                                                              |
 | `--straggler_min_local_epoch`  | The minimum value of local epoch for stragglers.                                                                                                                                                                                                                                                                                          |
 | `--external_model_params_file` | (New feature ✨) The relative file path of external (pretrained) model parameters (`*.pt`). e.g., `../../out/FedAvg/mnist_100_lenet5.pt`. Please confirm whether the shape of parameters compatible with the model by yourself. ⚠ This feature is enabled only when `unique_model=False`, which is pre-defined by each FL method.          |
-| `--save_model`                 | Non-zero value for saving output model(s) parameters in `FL-bench/out/${algo}`.  The default file name pattern is `${dataset}_${global_epoch}_${model}.pt`.                                                                                                                                                                               |
-| `--save_fig`                   | Non-zero value for saving the accuracy curves showed on Visdom into a `.jpeg` file at `FL-bench/out/${algo}`.                                                                                                                                                                                                                             |
-| `--save_metrics`               | Non-zero value for saving metrics stats into a `.csv` file at `FL-bench/out/${algo}`.                                                                                                                                                                                                                                                     |
+| `--save_model`                 | Non-zero value for saving output model(s) parameters in `FedCMD/out/${algo}`.  The default file name pattern is `${dataset}_${global_epoch}_${model}.pt`.                                                                                                                                                                               |
+| `--save_fig`                   | Non-zero value for saving the accuracy curves showed on Visdom into a `.jpeg` file at `FedCMD/out/${algo}`.                                                                                                                                                                                                                             |
+| `--save_metrics`               | Non-zero value for saving metrics stats into a `.csv` file at `FedCMD/out/${algo}`.                                                                                                                                                                                                                                                     |
 
 ### Supported Datasets 🎨
 
@@ -162,7 +159,7 @@ Regular Image Datasets
 - [*CINIC-10*](https://datashare.ed.ac.uk/handle/10283/3192) (3 x 32 x 32, 10 classes)
 
 - [*DomainNet*](http://ai.bu.edu/DomainNet/) (3 x ? x ?, 345 classes)
-  - Go check [`data/README.md`](https://github.com/KarhouTam/FL-bench/tree/master/data#readme) for the full process guideline 🧾.
+  - Go check [`data/README.md`]() for the full process guideline 🧾.
 
 Medical Image Datasets
 
