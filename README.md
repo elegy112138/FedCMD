@@ -6,9 +6,9 @@ Federated learning, as a promising distributed learning paradigm, enables collab
 ## 2. Framework
 
   <p align="center">
-      <img alt="FrameWork" src="https://github.com/elegy112138/FedCMD/blob/main/images/FedCMD.pdf"/>
+     <embed src="FedCMD.pdf" type="main/images" width="100%" height="600px" />
   </p>
-  
+ 
 The above figure presents the diagram of FedCMD. We consider the Cloud-edge cooperation system, in which two types of nodes are involved, including one Cloud server, and multiple edge clients. FedCMD contains two major phases including <strong>the personalized layer selection phase</strong> and the heterogeneous federated learning phase with the Cloud-edge model decoupling. In personalized layer selection phase, the Cloud-edge system employs the standard federated learning such as FedAvg and utilizes the contrastive layer selection mechanism to collaboratively elect the personalized layer. Thus, the selection proceeds as follows:
 <ul>
   <li><strong>Global parameters broadcasting:</strong> The central server initializes the global model parameter and distributes them to all edge clients.</li>
