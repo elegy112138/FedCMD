@@ -1,0 +1,57 @@
+==================== ALGORITHM: 4_layer_fix_fc1 ====================           
+Experiment Arguments:                                                          
+{                                                                              
+    'model': 'ModifiedLeNet5',                                                 
+    'dataset': 'fmnist',                                                       
+    'seed': 42,                                                                
+    'join_ratio': 0.1,                                                         
+    'global_epoch': 200,                                                       
+    'local_epoch': 5,                                                          
+    'finetune_epoch': 0,                                                       
+    'test_gap': 100,                                                           
+    'eval_test': 1,                                                            
+    'eval_train': 0,                                                           
+    'local_lr': 0.01,                                                          
+    'momentum': 0.0,                                                           
+    'weight_decay': 0.0,                                                       
+    'verbose_gap': 100000,                                                     
+    'batch_size': 32,                                                          
+    'visible': 1,                                                              
+    'global_testset': 0,                                                       
+    'straggler_ratio': 0,                                                      
+    'straggler_min_local_epoch': 1,                                            
+    'external_model_params_file': '',                                          
+    'use_cuda': 1,                                                             
+    'save_log': 1,                                                             
+    'save_model': 0,                                                           
+    'save_fig': 1,                                                             
+    'save_metrics': 1,                                                         
+    'warmup_round': 0.1,                                                       
+    'server_momentum': 0.9,                                                    
+    'dataset_args': {                                                          
+        'dataset': 'fmnist',                                                   
+        'client_num': 100,                                                     
+        'fraction': 0.5,                                                       
+        'seed': 42,                                                            
+        'split': 'sample',                                                     
+        'alpha': 0.1,                                                          
+        'least_samples': 40                                                    
+    }                                                                          
+}                                                                              
+==================== 4_layer_fix_fc1 TEST RESULTS: ====================        
+{                                                                              
+    100: {'loss': '0.1567 -> 0.0000', 'accuracy': '96.11% -> 0.00%'},          
+    200: {'loss': '0.1985 -> 0.0000', 'accuracy': '96.62% -> 0.00%'}           
+}                                                                              
+Convergence (test_before):                                                     
+4_layer_fix_fc1 achieved 10.0%(13.61%) at epoch: 2                             
+4_layer_fix_fc1 achieved 30.0%(35.07%) at epoch: 9                             
+4_layer_fix_fc1 achieved 40.0%(42.42%) at epoch: 22                            
+4_layer_fix_fc1 achieved 50.0%(52.57%) at epoch: 24                            
+4_layer_fix_fc1 achieved 70.0%(78.39%) at epoch: 35                            
+4_layer_fix_fc1 achieved 80.0%(84.94%) at epoch: 36                            
+4_layer_fix_fc1 achieved 90.0%(92.44%) at epoch: 39                            
+Convergence (test_after):                                                      
+4_layer_fix_fc1 achieved 70.0%(73.01%) at epoch: 0                             
+4_layer_fix_fc1 achieved 80.0%(81.27%) at epoch: 2                             
+4_layer_fix_fc1 achieved 90.0%(91.81%) at epoch: 8                             

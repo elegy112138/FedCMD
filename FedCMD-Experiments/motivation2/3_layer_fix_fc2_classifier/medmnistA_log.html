@@ -1,0 +1,58 @@
+==================== ALGORITHM: 3_layer_fix_fc2_classifier ====================
+Experiment Arguments:                                                          
+{                                                                              
+    'model': 'ModifiedLeNet5',                                                 
+    'dataset': 'medmnistA',                                                    
+    'seed': 42,                                                                
+    'join_ratio': 0.1,                                                         
+    'global_epoch': 200,                                                       
+    'local_epoch': 5,                                                          
+    'finetune_epoch': 0,                                                       
+    'test_gap': 100,                                                           
+    'eval_test': 1,                                                            
+    'eval_train': 0,                                                           
+    'local_lr': 0.01,                                                          
+    'momentum': 0.0,                                                           
+    'weight_decay': 0.0,                                                       
+    'verbose_gap': 100000,                                                     
+    'batch_size': 32,                                                          
+    'visible': 1,                                                              
+    'global_testset': 0,                                                       
+    'straggler_ratio': 0,                                                      
+    'straggler_min_local_epoch': 1,                                            
+    'external_model_params_file': '',                                          
+    'use_cuda': 1,                                                             
+    'save_log': 1,                                                             
+    'save_model': 0,                                                           
+    'save_fig': 1,                                                             
+    'save_metrics': 1,                                                         
+    'warmup_round': 0.1,                                                       
+    'server_momentum': 0.9,                                                    
+    'dataset_args': {                                                          
+        'dataset': 'medmnistA',                                                
+        'client_num': 100,                                                     
+        'fraction': 0.5,                                                       
+        'seed': 42,                                                            
+        'split': 'sample',                                                     
+        'alpha': 0.1,                                                          
+        'least_samples': 40                                                    
+    }                                                                          
+}                                                                              
+==================== 3_layer_fix_fc2_classifier TEST RESULTS:                  
+====================                                                           
+{                                                                              
+    100: {'loss': '0.1799 -> 0.0000', 'accuracy': '94.52% -> 0.00%'},          
+    200: {'loss': '0.1482 -> 0.0000', 'accuracy': '96.54% -> 0.00%'}           
+}                                                                              
+Convergence (test_before):                                                     
+3_layer_fix_fc2_classifier achieved 20.0%(21.37%) at epoch: 1                  
+3_layer_fix_fc2_classifier achieved 40.0%(45.48%) at epoch: 3                  
+3_layer_fix_fc2_classifier achieved 50.0%(55.77%) at epoch: 7                  
+3_layer_fix_fc2_classifier achieved 60.0%(62.02%) at epoch: 11                 
+3_layer_fix_fc2_classifier achieved 70.0%(73.70%) at epoch: 16                 
+3_layer_fix_fc2_classifier achieved 80.0%(81.81%) at epoch: 24                 
+3_layer_fix_fc2_classifier achieved 90.0%(90.86%) at epoch: 48                 
+Convergence (test_after):                                                      
+3_layer_fix_fc2_classifier achieved 70.0%(76.17%) at epoch: 0                  
+3_layer_fix_fc2_classifier achieved 80.0%(81.04%) at epoch: 1                  
+3_layer_fix_fc2_classifier achieved 90.0%(91.16%) at epoch: 2                  

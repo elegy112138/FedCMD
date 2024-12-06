@@ -1,0 +1,57 @@
+==================== ALGORITHM: FedAMD_rho_0.3 ====================            
+Experiment Arguments:                                                          
+{                                                                              
+    'model': 'ModifiedLeNet5',                                                 
+    'dataset': 'mnist',                                                        
+    'seed': 42,                                                                
+    'join_ratio': 0.1,                                                         
+    'global_epoch': 200,                                                       
+    'local_epoch': 5,                                                          
+    'finetune_epoch': 0,                                                       
+    'test_gap': 100,                                                           
+    'eval_test': 1,                                                            
+    'eval_train': 0,                                                           
+    'local_lr': 0.01,                                                          
+    'momentum': 0.0,                                                           
+    'weight_decay': 0.0,                                                       
+    'verbose_gap': 100000,                                                     
+    'batch_size': 32,                                                          
+    'visible': 1,                                                              
+    'global_testset': 0,                                                       
+    'straggler_ratio': 0,                                                      
+    'straggler_min_local_epoch': 1,                                            
+    'external_model_params_file': '',                                          
+    'use_cuda': 1,                                                             
+    'save_log': 1,                                                             
+    'save_model': 0,                                                           
+    'save_fig': 1,                                                             
+    'save_metrics': 1,                                                         
+    'warmup_round': 0.1,                                                       
+    'server_momentum': 0.9,                                                    
+    'dataset_args': {                                                          
+        'dataset': 'mnist',                                                    
+        'client_num': 100,                                                     
+        'fraction': 0.5,                                                       
+        'seed': 42,                                                            
+        'split': 'sample',                                                     
+        'alpha': 0.1,                                                          
+        'least_samples': 40                                                    
+    }                                                                          
+}                                                                              
+==================== FedAMD_rho_0.3 TEST RESULTS: ====================         
+{                                                                              
+    100: {'loss': '0.1405 -> 0.0000', 'accuracy': '96.73% -> 0.00%'},          
+    200: {'loss': '0.0228 -> 0.0000', 'accuracy': '99.43% -> 0.00%'}           
+}                                                                              
+Convergence (test_before):                                                     
+FedAMD_rho_0.3 achieved 10.0%(18.96%) at epoch: 2                              
+FedAMD_rho_0.3 achieved 30.0%(33.91%) at epoch: 3                              
+FedAMD_rho_0.3 achieved 40.0%(42.16%) at epoch: 4                              
+FedAMD_rho_0.3 achieved 60.0%(64.89%) at epoch: 13                             
+FedAMD_rho_0.3 achieved 70.0%(78.66%) at epoch: 24                             
+FedAMD_rho_0.3 achieved 80.0%(85.95%) at epoch: 37                             
+FedAMD_rho_0.3 achieved 90.0%(92.15%) at epoch: 53                             
+Convergence (test_after):                                                      
+FedAMD_rho_0.3 achieved 70.0%(75.91%) at epoch: 0                              
+FedAMD_rho_0.3 achieved 80.0%(85.95%) at epoch: 1                              
+FedAMD_rho_0.3 achieved 90.0%(90.28%) at epoch: 10                             

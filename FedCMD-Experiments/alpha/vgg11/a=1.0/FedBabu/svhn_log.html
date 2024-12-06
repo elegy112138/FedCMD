@@ -1,0 +1,278 @@
+==================== ALGORITHM: FedBabu ====================                   
+Experiment Arguments:                                                          
+{                                                                              
+    'model': 'ModifiedVGG11',                                                  
+    'dataset': 'svhn',                                                         
+    'seed': 42,                                                                
+    'join_ratio': 0.1,                                                         
+    'global_epoch': 200,                                                       
+    'local_epoch': 5,                                                          
+    'finetune_epoch': 0,                                                       
+    'test_gap': 100,                                                           
+    'eval_test': 1,                                                            
+    'eval_train': 0,                                                           
+    'local_lr': 0.0001,                                                        
+    'momentum': 0.0,                                                           
+    'weight_decay': 0.0,                                                       
+    'verbose_gap': 10,                                                         
+    'batch_size': 32,                                                          
+    'visible': 1,                                                              
+    'global_testset': 0,                                                       
+    'straggler_ratio': 0,                                                      
+    'straggler_min_local_epoch': 1,                                            
+    'external_model_params_file': '',                                          
+    'use_cuda': 1,                                                             
+    'save_log': 1,                                                             
+    'save_model': 0,                                                           
+    'save_fig': 1,                                                             
+    'save_metrics': 1,                                                         
+    'viz_win_name': None,                                                      
+    'dataset_args': {                                                          
+        'dataset': 'svhn',                                                     
+        'client_num': 100,                                                     
+        'fraction': 0.5,                                                       
+        'seed': 42,                                                            
+        'split': 'sample',                                                     
+        'alpha': 1.0,                                                          
+        'least_samples': 40                                                    
+    }                                                                          
+}                                                                              
+-------------------------- TRAINING EPOCH: 10 --------------------------       
+client [77] (test)  loss: 1.4220 -> 1.0021   acc: 57.06% -> 68.59%             
+client [81] (test)  loss: 2.2045 -> 1.6841   acc: 30.39% -> 41.65%             
+client [21] (test)  loss: 1.3508 -> 1.0332   acc: 58.24% -> 63.08%             
+client [68] (test)  loss: 1.6336 -> 1.4124   acc: 42.97% -> 51.49%             
+client [93] (test)  loss: 1.0984 -> 0.7034   acc: 64.51% -> 74.31%             
+client [31] (test)  loss: 3.0018 -> 1.2783   acc: 25.59% -> 64.22%             
+client [20] (test)  loss: 1.9843 -> 1.7582   acc: 34.68% -> 41.44%             
+client [59] (test)  loss: 2.1111 -> 1.5687   acc: 33.25% -> 44.59%             
+client [48] (test)  loss: 1.7249 -> 1.1818   acc: 39.61% -> 58.82%             
+client [34] (test)  loss: 2.2395 -> 1.6173   acc: 32.30% -> 46.03%             
+-------------------------- TRAINING EPOCH: 20 --------------------------       
+client [69] (test)  loss: 1.4438 -> 1.0946   acc: 49.44% -> 59.44%             
+client [99] (test)  loss: 0.8149 -> 0.5070   acc: 74.08% -> 82.79%             
+client [67] (test)  loss: 1.2839 -> 1.1492   acc: 58.75% -> 61.25%             
+client [0] (test)  loss: 1.1681 -> 0.9921   acc: 67.38% -> 73.20%              
+client [76] (test)  loss: 1.4981 -> 1.2712   acc: 51.49% -> 57.43%             
+client [41] (test)  loss: 1.2801 -> 1.1156   acc: 58.04% -> 67.25%             
+client [62] (test)  loss: 1.4023 -> 1.1141   acc: 55.64% -> 64.29%             
+client [2] (test)  loss: 1.1681 -> 0.9749   acc: 61.30% -> 69.94%              
+client [14] (test)  loss: 1.6271 -> 1.4716   acc: 47.62% -> 54.39%             
+client [46] (test)  loss: 1.1419 -> 0.9345   acc: 64.31% -> 72.12%             
+-------------------------- TRAINING EPOCH: 30 --------------------------       
+client [24] (test)  loss: 1.7841 -> 1.1442   acc: 47.55% -> 63.64%             
+client [68] (test)  loss: 1.2900 -> 0.9364   acc: 59.60% -> 66.93%             
+client [57] (test)  loss: 1.3695 -> 1.1578   acc: 58.26% -> 65.77%             
+client [17] (test)  loss: 1.7019 -> 1.2175   acc: 49.10% -> 62.45%             
+client [54] (test)  loss: 1.0802 -> 0.9440   acc: 66.92% -> 71.32%             
+client [23] (test)  loss: 1.3685 -> 0.9583   acc: 56.28% -> 72.10%             
+client [35] (test)  loss: 0.9434 -> 0.8493   acc: 72.31% -> 73.90%             
+client [59] (test)  loss: 1.3642 -> 1.0658   acc: 56.44% -> 63.66%             
+client [31] (test)  loss: 1.4736 -> 0.8152   acc: 52.84% -> 77.01%             
+client [9] (test)  loss: 0.8224 -> 0.5390   acc: 78.35% -> 83.27%              
+-------------------------- TRAINING EPOCH: 40 --------------------------       
+client [64] (test)  loss: 1.6262 -> 0.9844   acc: 49.37% -> 69.77%             
+client [33] (test)  loss: 0.5758 -> 0.4406   acc: 84.67% -> 88.22%             
+client [16] (test)  loss: 0.7265 -> 0.5094   acc: 78.48% -> 83.30%             
+client [44] (test)  loss: 0.8464 -> 0.5094   acc: 73.50% -> 84.33%             
+client [8] (test)  loss: 0.9899 -> 0.9166   acc: 70.14% -> 71.80%              
+client [31] (test)  loss: 1.6970 -> 0.7224   acc: 50.71% -> 80.09%             
+client [47] (test)  loss: 0.8566 -> 0.5917   acc: 72.55% -> 80.04%             
+client [36] (test)  loss: 1.1368 -> 0.8423   acc: 63.91% -> 70.53%             
+client [20] (test)  loss: 1.0996 -> 0.9794   acc: 63.06% -> 63.96%             
+client [56] (test)  loss: 0.8514 -> 0.5337   acc: 76.73% -> 83.08%             
+-------------------------- TRAINING EPOCH: 50 --------------------------       
+client [4] (test)  loss: 1.4545 -> 0.9663   acc: 54.01% -> 68.55%              
+client [60] (test)  loss: 1.6865 -> 0.8877   acc: 53.71% -> 69.74%             
+client [28] (test)  loss: 1.4687 -> 0.7716   acc: 58.36% -> 78.94%             
+client [25] (test)  loss: 1.2132 -> 0.9268   acc: 64.55% -> 71.64%             
+client [58] (test)  loss: 1.6342 -> 1.1960   acc: 55.32% -> 65.05%             
+client [44] (test)  loss: 0.7268 -> 0.5037   acc: 77.00% -> 84.17%             
+client [39] (test)  loss: 1.2347 -> 0.8422   acc: 66.67% -> 74.66%             
+client [29] (test)  loss: 0.8612 -> 0.7565   acc: 72.10% -> 75.63%             
+client [3] (test)  loss: 1.3494 -> 0.7033   acc: 61.26% -> 77.80%              
+client [84] (test)  loss: 1.1687 -> 0.7919   acc: 62.67% -> 73.76%             
+-------------------------- TRAINING EPOCH: 60 --------------------------       
+client [21] (test)  loss: 0.7802 -> 0.5433   acc: 75.27% -> 83.87%             
+client [84] (test)  loss: 1.2439 -> 0.7281   acc: 61.99% -> 75.11%             
+client [10] (test)  loss: 1.0858 -> 1.0015   acc: 65.91% -> 72.73%             
+client [36] (test)  loss: 0.8143 -> 0.6407   acc: 74.59% -> 78.20%             
+client [65] (test)  loss: 0.6264 -> 0.4292   acc: 82.17% -> 86.62%             
+client [81] (test)  loss: 1.4497 -> 0.8338   acc: 59.10% -> 73.73%             
+client [79] (test)  loss: 0.5010 -> 0.2019   acc: 86.40% -> 94.67%             
+client [42] (test)  loss: 1.1749 -> 0.5681   acc: 66.62% -> 82.41%             
+client [11] (test)  loss: 0.4649 -> 0.1684   acc: 86.80% -> 95.73%             
+client [96] (test)  loss: 1.0710 -> 0.5509   acc: 60.94% -> 83.93%             
+-------------------------- TRAINING EPOCH: 70 --------------------------       
+client [8] (test)  loss: 0.7469 -> 0.7118   acc: 77.01% -> 79.15%              
+client [53] (test)  loss: 0.7047 -> 0.6066   acc: 77.49% -> 81.29%             
+client [52] (test)  loss: 0.7394 -> 0.7221   acc: 73.78% -> 76.40%             
+client [42] (test)  loss: 0.7631 -> 0.5157   acc: 78.35% -> 84.06%             
+client [69] (test)  loss: 0.9591 -> 0.9053   acc: 68.70% -> 68.52%             
+client [59] (test)  loss: 1.1344 -> 0.7270   acc: 67.01% -> 75.77%             
+client [7] (test)  loss: 1.0209 -> 0.9219   acc: 69.75% -> 70.82%              
+client [26] (test)  loss: 0.6162 -> 0.4387   acc: 81.95% -> 88.53%             
+client [49] (test)  loss: 1.2724 -> 0.8330   acc: 65.59% -> 73.76%             
+client [98] (test)  loss: 0.6790 -> 0.6222   acc: 76.66% -> 81.89%             
+-------------------------- TRAINING EPOCH: 80 --------------------------       
+client [98] (test)  loss: 0.7193 -> 0.6215   acc: 77.26% -> 82.29%             
+client [47] (test)  loss: 0.7683 -> 0.4765   acc: 76.97% -> 84.26%             
+client [21] (test)  loss: 0.7272 -> 0.5071   acc: 79.75% -> 85.48%             
+client [77] (test)  loss: 0.5117 -> 0.4667   acc: 85.29% -> 90.46%             
+client [95] (test)  loss: 0.6607 -> 0.4835   acc: 80.55% -> 87.23%             
+client [91] (test)  loss: 0.7740 -> 0.8219   acc: 78.59% -> 78.33%             
+client [14] (test)  loss: 0.8940 -> 0.8543   acc: 73.93% -> 76.44%             
+client [99] (test)  loss: 0.4676 -> 0.3033   acc: 85.49% -> 91.10%             
+client [20] (test)  loss: 0.7543 -> 0.8438   acc: 75.68% -> 72.52%             
+client [39] (test)  loss: 0.9556 -> 0.6946   acc: 73.29% -> 79.92%             
+-------------------------- TRAINING EPOCH: 90 --------------------------       
+client [52] (test)  loss: 0.7125 -> 0.6645   acc: 77.72% -> 77.90%             
+client [62] (test)  loss: 0.8283 -> 0.6092   acc: 76.50% -> 83.46%             
+client [71] (test)  loss: 1.1095 -> 0.8458   acc: 67.58% -> 72.87%             
+client [97] (test)  loss: 0.9926 -> 0.8710   acc: 73.59% -> 73.81%             
+client [30] (test)  loss: 0.6638 -> 0.6373   acc: 83.05% -> 82.86%             
+client [88] (test)  loss: 0.9270 -> 0.6132   acc: 71.58% -> 78.74%             
+client [60] (test)  loss: 1.2645 -> 0.7792   acc: 64.33% -> 78.16%             
+client [82] (test)  loss: 1.3560 -> 0.7439   acc: 61.72% -> 78.65%             
+client [91] (test)  loss: 0.7763 -> 0.8230   acc: 79.11% -> 78.59%             
+client [57] (test)  loss: 0.9617 -> 0.8675   acc: 72.97% -> 75.38%             
+-------------------------- TRAINING EPOCH: 100 --------------------------      
+client [31] (test)  loss: 1.8048 -> 0.5568   acc: 56.16% -> 85.31%             
+client [15] (test)  loss: 0.8086 -> 0.7660   acc: 78.28% -> 78.92%             
+client [71] (test)  loss: 1.2459 -> 0.8321   acc: 65.19% -> 74.74%             
+client [97] (test)  loss: 1.2367 -> 0.8895   acc: 65.91% -> 75.85%             
+client [53] (test)  loss: 0.6255 -> 0.4982   acc: 83.63% -> 84.50%             
+client [77] (test)  loss: 0.4409 -> 0.4257   acc: 89.07% -> 91.05%             
+client [76] (test)  loss: 1.0500 -> 0.7103   acc: 69.64% -> 76.24%             
+client [79] (test)  loss: 0.2878 -> 0.1907   acc: 91.73% -> 94.67%             
+client [28] (test)  loss: 0.9467 -> 0.6698   acc: 73.95% -> 83.60%             
+client [99] (test)  loss: 0.3762 -> 0.2897   acc: 88.78% -> 91.88%             
+-------------------------- TRAINING EPOCH: 110 --------------------------      
+client [97] (test)  loss: 1.0392 -> 0.8870   acc: 72.01% -> 75.85%             
+client [86] (test)  loss: 0.9679 -> 0.8176   acc: 73.06% -> 77.33%             
+client [34] (test)  loss: 1.2736 -> 0.7247   acc: 65.57% -> 77.76%             
+client [73] (test)  loss: 0.4700 -> 0.4301   acc: 86.21% -> 86.36%             
+client [5] (test)  loss: 1.1376 -> 0.7287   acc: 67.38% -> 80.00%              
+client [96] (test)  loss: 0.8178 -> 0.4984   acc: 77.56% -> 86.15%             
+client [22] (test)  loss: 0.8463 -> 0.6179   acc: 76.58% -> 84.50%             
+client [60] (test)  loss: 1.5314 -> 0.7578   acc: 61.12% -> 79.56%             
+client [66] (test)  loss: 0.3311 -> 0.0306   acc: 90.35% -> 99.42%             
+client [83] (test)  loss: 1.0567 -> 0.5346   acc: 71.52% -> 84.13%             
+-------------------------- TRAINING EPOCH: 120 --------------------------      
+client [76] (test)  loss: 0.7865 -> 0.6996   acc: 74.92% -> 76.90%             
+client [65] (test)  loss: 0.8161 -> 0.3794   acc: 78.82% -> 90.13%             
+client [95] (test)  loss: 0.8779 -> 0.4617   acc: 75.64% -> 87.03%             
+client [17] (test)  loss: 0.7906 -> 0.7712   acc: 76.35% -> 77.62%             
+client [8] (test)  loss: 0.6552 -> 0.6214   acc: 80.09% -> 81.28%              
+client [35] (test)  loss: 0.8587 -> 0.5945   acc: 75.70% -> 84.26%             
+client [98] (test)  loss: 0.8555 -> 0.5436   acc: 73.84% -> 84.71%             
+client [53] (test)  loss: 0.5695 -> 0.4819   acc: 83.33% -> 85.38%             
+client [43] (test)  loss: 0.6917 -> 0.5932   acc: 80.61% -> 82.99%             
+client [64] (test)  loss: 0.9497 -> 0.7296   acc: 74.81% -> 80.60%             
+-------------------------- TRAINING EPOCH: 130 --------------------------      
+client [21] (test)  loss: 0.5595 -> 0.4646   acc: 84.41% -> 87.63%             
+client [88] (test)  loss: 0.7810 -> 0.5550   acc: 76.63% -> 83.79%             
+client [38] (test)  loss: 0.9824 -> 0.6128   acc: 75.99% -> 82.67%             
+client [3] (test)  loss: 1.1245 -> 0.5629   acc: 70.66% -> 83.47%              
+client [5] (test)  loss: 1.0959 -> 0.6993   acc: 68.93% -> 81.55%              
+client [41] (test)  loss: 0.8773 -> 0.7425   acc: 75.69% -> 81.18%             
+client [7] (test)  loss: 1.0040 -> 0.8550   acc: 72.42% -> 75.27%              
+client [37] (test)  loss: 1.1579 -> 0.7584   acc: 71.68% -> 83.37%             
+client [45] (test)  loss: 0.7366 -> 0.6011   acc: 79.28% -> 81.51%             
+client [47] (test)  loss: 0.6205 -> 0.4400   acc: 81.38% -> 87.72%             
+-------------------------- TRAINING EPOCH: 140 --------------------------      
+client [16] (test)  loss: 0.5007 -> 0.3631   acc: 87.20% -> 91.09%             
+client [11] (test)  loss: 0.3900 -> 0.1635   acc: 90.68% -> 95.53%             
+client [37] (test)  loss: 0.8183 -> 0.7439   acc: 79.60% -> 84.95%             
+client [41] (test)  loss: 0.6446 -> 0.7168   acc: 80.98% -> 80.98%             
+client [95] (test)  loss: 0.7238 -> 0.4809   acc: 79.17% -> 87.62%             
+client [53] (test)  loss: 0.4972 -> 0.4574   acc: 88.30% -> 83.92%             
+client [22] (test)  loss: 0.7833 -> 0.5854   acc: 80.18% -> 86.85%             
+client [25] (test)  loss: 0.7814 -> 0.6587   acc: 77.64% -> 81.45%             
+client [69] (test)  loss: 0.8814 -> 0.8141   acc: 73.70% -> 73.70%             
+client [46] (test)  loss: 0.8008 -> 0.5574   acc: 77.32% -> 85.13%             
+-------------------------- TRAINING EPOCH: 150 --------------------------      
+client [47] (test)  loss: 0.6163 -> 0.4311   acc: 84.45% -> 88.29%             
+client [69] (test)  loss: 0.9570 -> 0.7892   acc: 72.59% -> 74.81%             
+client [82] (test)  loss: 1.4201 -> 0.7306   acc: 64.06% -> 79.43%             
+client [45] (test)  loss: 0.7704 -> 0.5723   acc: 78.25% -> 83.90%             
+client [7] (test)  loss: 0.8804 -> 0.8565   acc: 76.69% -> 75.98%              
+client [50] (test)  loss: 0.8276 -> 0.6200   acc: 77.69% -> 83.67%             
+client [35] (test)  loss: 0.5663 -> 0.5584   acc: 84.26% -> 85.66%             
+client [24] (test)  loss: 1.1097 -> 0.7011   acc: 70.63% -> 78.32%             
+client [15] (test)  loss: 0.7025 -> 0.6395   acc: 79.78% -> 82.80%             
+client [58] (test)  loss: 1.4350 -> 1.0067   acc: 64.50% -> 73.69%             
+-------------------------- TRAINING EPOCH: 160 --------------------------      
+client [48] (test)  loss: 0.6483 -> 0.5322   acc: 80.98% -> 84.51%             
+client [76] (test)  loss: 0.7731 -> 0.6773   acc: 78.88% -> 76.24%             
+client [67] (test)  loss: 0.7118 -> 0.5565   acc: 82.81% -> 83.75%             
+client [37] (test)  loss: 0.8876 -> 0.7481   acc: 77.62% -> 84.55%             
+client [58] (test)  loss: 1.1237 -> 1.0047   acc: 72.07% -> 74.23%             
+client [64] (test)  loss: 1.2322 -> 0.6892   acc: 71.03% -> 84.38%             
+client [77] (test)  loss: 0.4499 -> 0.3891   acc: 89.26% -> 91.85%             
+client [55] (test)  loss: 0.7513 -> 0.5075   acc: 77.92% -> 85.12%             
+client [12] (test)  loss: 0.6881 -> 0.5686   acc: 82.30% -> 84.83%             
+client [89] (test)  loss: 0.6688 -> 0.5137   acc: 82.19% -> 86.23%             
+-------------------------- TRAINING EPOCH: 170 --------------------------      
+client [84] (test)  loss: 0.5767 -> 0.5238   acc: 81.67% -> 83.71%             
+client [51] (test)  loss: 0.9426 -> 0.7798   acc: 73.67% -> 82.86%             
+client [8] (test)  loss: 0.6321 -> 0.6016   acc: 83.18% -> 81.75%              
+client [18] (test)  loss: 0.6732 -> 0.6652   acc: 83.70% -> 83.15%             
+client [94] (test)  loss: 0.8028 -> 0.5836   acc: 79.56% -> 85.12%             
+client [81] (test)  loss: 0.7466 -> 0.6781   acc: 80.30% -> 81.80%             
+client [3] (test)  loss: 0.7703 -> 0.5696   acc: 78.77% -> 85.25%              
+client [11] (test)  loss: 0.4570 -> 0.1586   acc: 88.16% -> 96.31%             
+client [95] (test)  loss: 0.7807 -> 0.3904   acc: 77.80% -> 89.59%             
+client [67] (test)  loss: 0.5181 -> 0.5597   acc: 86.25% -> 83.44%             
+-------------------------- TRAINING EPOCH: 180 --------------------------      
+client [21] (test)  loss: 0.5292 -> 0.4576   acc: 85.66% -> 88.17%             
+client [79] (test)  loss: 0.4833 -> 0.1255   acc: 88.79% -> 95.96%             
+client [58] (test)  loss: 1.1565 -> 1.0215   acc: 70.99% -> 74.41%             
+client [88] (test)  loss: 0.7809 -> 0.5653   acc: 78.11% -> 85.47%             
+client [46] (test)  loss: 0.6375 -> 0.4945   acc: 82.53% -> 86.80%             
+client [11] (test)  loss: 0.4491 -> 0.1717   acc: 88.35% -> 96.31%             
+client [55] (test)  loss: 0.5777 -> 0.5055   acc: 83.36% -> 86.88%             
+client [13] (test)  loss: 0.3352 -> 0.1265   acc: 90.87% -> 97.17%             
+client [31] (test)  loss: 1.1839 -> 0.5024   acc: 72.51% -> 86.73%             
+client [75] (test)  loss: 0.6001 -> 0.4712   acc: 82.64% -> 86.23%             
+-------------------------- TRAINING EPOCH: 190 --------------------------      
+client [19] (test)  loss: 0.6412 -> 0.3197   acc: 83.24% -> 91.05%             
+client [7] (test)  loss: 0.7525 -> 0.7933   acc: 77.76% -> 78.83%              
+client [57] (test)  loss: 0.7698 -> 0.7825   acc: 80.48% -> 78.98%             
+client [13] (test)  loss: 0.3143 -> 0.1150   acc: 90.87% -> 97.64%             
+client [43] (test)  loss: 0.9599 -> 0.5700   acc: 75.17% -> 86.39%             
+client [91] (test)  loss: 0.6720 -> 0.7747   acc: 82.51% -> 81.46%             
+client [10] (test)  loss: 0.6856 -> 0.7017   acc: 81.82% -> 82.27%             
+client [64] (test)  loss: 1.0008 -> 0.6777   acc: 74.56% -> 83.88%             
+client [82] (test)  loss: 1.0181 -> 0.7096   acc: 72.66% -> 81.51%             
+client [22] (test)  loss: 0.6517 -> 0.5747   acc: 83.24% -> 87.03%             
+-------------------------- TRAINING EPOCH: 200 --------------------------      
+client [20] (test)  loss: 0.8698 -> 0.7216   acc: 77.03% -> 78.83%             
+client [23] (test)  loss: 1.1572 -> 0.5835   acc: 71.45% -> 85.15%             
+client [88] (test)  loss: 0.9748 -> 0.5546   acc: 75.58% -> 85.89%             
+client [98] (test)  loss: 0.6122 -> 0.5072   acc: 83.50% -> 86.72%             
+client [79] (test)  loss: 0.3311 -> 0.1318   acc: 92.10% -> 96.14%             
+client [21] (test)  loss: 0.6107 -> 0.4596   acc: 82.62% -> 88.35%             
+client [92] (test)  loss: 0.7791 -> 0.5632   acc: 77.34% -> 82.14%             
+client [56] (test)  loss: 0.5004 -> 0.3546   acc: 88.46% -> 90.38%             
+client [5] (test)  loss: 1.0888 -> 0.6522   acc: 71.46% -> 82.72%              
+client [52] (test)  loss: 0.7734 -> 0.5705   acc: 78.46% -> 83.71%             
+==================== FedBabu TEST RESULTS: ====================                
+{                                                                              
+    100: {'loss': '0.8896 -> 0.6955', 'accuracy': '75.16% -> 80.94%'},         
+    200: {'loss': '0.8228 -> 0.6038', 'accuracy': '79.14% -> 84.48%'}          
+}                                                                              
+Convergence (test_before):                                                     
+FedBabu achieved 10.0%(10.48%) at epoch: 0                                     
+FedBabu achieved 20.0%(23.46%) at epoch: 2                                     
+FedBabu achieved 40.0%(43.00%) at epoch: 4                                     
+FedBabu achieved 50.0%(52.12%) at epoch: 13                                    
+FedBabu achieved 60.0%(61.76%) at epoch: 21                                    
+FedBabu achieved 70.0%(70.13%) at epoch: 36                                    
+FedBabu achieved 80.0%(82.32%) at epoch: 114                                   
+Convergence (test_after):                                                      
+FedBabu achieved 40.0%(42.12%) at epoch: 0                                     
+FedBabu achieved 50.0%(58.53%) at epoch: 4                                     
+FedBabu achieved 60.0%(62.54%) at epoch: 13                                    
+FedBabu achieved 70.0%(70.18%) at epoch: 21                                    
+FedBabu achieved 80.0%(80.28%) at epoch: 43                                    
