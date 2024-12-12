@@ -33,28 +33,28 @@ Our extensive experiments demonstrate the efficacy of FedCMD across a variety of
 The following tables summarize the average model accuracy across different datasets and configurations:
 
 #### Table VI: Average Model Accuracy for α = 0.1
-![Average Model Accuracy for α = 0.1](path_to_image/TableVI.png)
+![Average Model Accuracy for α = 0.1](/images/TableVI.png)
 
 #### Table VII: Average Model Accuracy for α = 0.5
-![Average Model Accuracy for α = 0.5](path_to_image/TableVII.png)
+![Average Model Accuracy for α = 0.5](/images/TableVII.png)
 
 #### Table VIII: Average Model Accuracy for α = 1.0
-![Average Model Accuracy for α = 1.0](path_to_image/TableVIII.png)
+![Average Model Accuracy for α = 1.0](/images/TableVIII.png)
 
 ### 3.2 Accuracy Trends Over Epochs
 
 Figure 5 provides a comparison of accuracy trends over epochs for FedCMD against other methods:
 
-![Accuracy Comparison of FedCMD and other methods](path_to_image/Figure5.png)
+![Accuracy Comparison of FedCMD and other methods](/images/Figure5.png)
 
 ### 3.3 Impact of Join Ratio and Number of Rounds
 
 Figure 7 and Table IX illustrate how different join ratios and the number of layer selection rounds influence the accuracy across ten datasets:
 
-![Accuracy comparison for different join ratios](path_to_image/Figure7.png)
+![Accuracy comparison for different join ratios](/images/Figure7.png)
 
 #### Table IX: Accuracy with Different Rounds of Layer Selection Phase
-![Accuracy with Different Rounds of Layer Selection Phase](path_to_image/TableIX.png)
+![Accuracy with Different Rounds of Layer Selection Phase](/images/TableIX.png)
 
 
 ## 3. Installation
