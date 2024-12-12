@@ -24,6 +24,38 @@ Once this personalized layer is determined, it remains fixed throughout **the he
 - **Communication of local gradients:** Edge clients send updates of their local model parameters back to the Cloud server.
 - **Cloud-side processing:** The Cloud server utilizes the personalized layer parameters to calculate the weight matrix and implements weighted federated aggregation to update the parameters of the body layers.
 
+## 3. Experimental Results
+
+Our extensive experiments demonstrate the efficacy of FedCMD across a variety of settings and compare it against other state-of-the-art federated learning methods.
+
+### 3.1 Performance Overview
+
+The following tables summarize the average model accuracy across different datasets and configurations:
+
+#### Table VI: Average Model Accuracy for α = 0.1
+![Average Model Accuracy for α = 0.1](path_to_image/TableVI.png)
+
+#### Table VII: Average Model Accuracy for α = 0.5
+![Average Model Accuracy for α = 0.5](path_to_image/TableVII.png)
+
+#### Table VIII: Average Model Accuracy for α = 1.0
+![Average Model Accuracy for α = 1.0](path_to_image/TableVIII.png)
+
+### 3.2 Accuracy Trends Over Epochs
+
+Figure 5 provides a comparison of accuracy trends over epochs for FedCMD against other methods:
+
+![Accuracy Comparison of FedCMD and other methods](path_to_image/Figure5.png)
+
+### 3.3 Impact of Join Ratio and Number of Rounds
+
+Figure 7 and Table IX illustrate how different join ratios and the number of layer selection rounds influence the accuracy across ten datasets:
+
+![Accuracy comparison for different join ratios](path_to_image/Figure7.png)
+
+#### Table IX: Accuracy with Different Rounds of Layer Selection Phase
+![Accuracy with Different Rounds of Layer Selection Phase](path_to_image/TableIX.png)
+
 
 ## 3. Installation
 
