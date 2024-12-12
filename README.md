@@ -43,13 +43,13 @@ The following tables summarize the average model accuracy across different datas
 
 ### 3.2 Accuracy Trends Over Epochs
 
-Figure 5 provides a comparison of accuracy trends over epochs for FedCMD against other methods:
+provides a comparison of accuracy trends over epochs for FedCMD against other methods:
 
 ![Accuracy Comparison of FedCMD and other methods](/images/Figure5.png)
 
 ### 3.3 Impact of Join Ratio and Number of Rounds
 
-Figure 7 and Table IX illustrate how different join ratios and the number of layer selection rounds influence the accuracy across ten datasets:
+Figure and Table IX illustrate how different join ratios and the number of layer selection rounds influence the accuracy across ten datasets:
 
 ![Accuracy comparison for different join ratios](/images/Figure7.png)
 
